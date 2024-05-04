@@ -125,7 +125,7 @@ class SCRCPYULTRA(QWidget):
     def addOCRSettings(self, layout):
         layout.addWidget(QLabel('Optical Character Recognition (OCR):'))
         self.ocrCombo = QComboBox()
-        self.ocrCombo.addItems(['OCR Disabled', 'OCR Enabled (Tesseract)']) # , 'Screen Dump (UiAutomate)'     Insert combo option to enable UiAutomate Dumps (Experimental!)
+        self.ocrCombo.addItems(['OCR Disabled', 'OCR Enabled (Tesseract)', 'Screen Dump (UiAutomate)']) # , 'Screen Dump (UiAutomate)'     Insert combo option to enable UiAutomate Dumps (Experimental!)
         layout.addWidget(self.ocrCombo)
         screenshotBtn = QPushButton('Screenshot')
         screenshotBtn.clicked.connect(self.takeScreenshot)  
