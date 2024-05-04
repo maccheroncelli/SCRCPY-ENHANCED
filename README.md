@@ -1,7 +1,7 @@
 # SCRCPY-ULTRA
 
 ## Description
-SCRCPY-ULTRA is a comprehensive Python-based tool designed to enhance interaction with Android devices. Leveraging advanced capabilities like screen mirroring, device control, and PDF document management, it offers extensive functionalities through a user-friendly GUI. This application integrates ADB for device communication and provides features such as real-time image processing, PDF generation, and custom event handling for efficient device management.
+SCRCPY-ULTRA enhances the functionality of the original SCRCPY application. Autoscrolling, OCR of screenshots, cropping of screenshots, and image stitching...
 
 To leverage the full functionality of SCRCPY-ULTRA, including screen recording and mirroring, place the script in the same directory as your SCRCPY installation. 
 This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
@@ -13,7 +13,7 @@ This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
 2. Download the `SCRCPY-ULTRA' script and place it into the SCRCPY directory.
 4. Install required Python packages:
    ```sh
-   pip install PyQt5 opencv-python-headless PyPDF2 pyautogui numpy pillow reportlab
+   pip install PyQt5 opencv-python-headless PyPDF2 pyautogui numpy pillow reportlab imagehash
    ```
    
 ### Android Device Setup
