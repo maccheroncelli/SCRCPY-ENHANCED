@@ -33,12 +33,15 @@ This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
 - **SCRCPY Functionality**: 
    - Screen Mirroring
    - Screen recording: Commences a recording in MP4 format. File will be saved on exit as "%Y-%m-%d_%H-%M-%S", (Example: 2024-05-05_07-14-42.mp4)
+     
 - **Screenshot Tool**:
    - Offers the ability to take screenshots of the connected device.
    - Uses ADB to save a PNG file with the filename as "%Y-%m-%d_%H-%M-%S", (Example: 2024-05-05_07-14-42.png)
+     
 - **OCR Capabilities**
    -  When enabled, every screenshot will be converted to a black and white PDF document, and then OCR'd with Tessract.  High contrast PDF produces more accurate results.  Also performed for autoscrolling screenshots if selected.
    -  Screen Dump (uiAutomate) **Experimental** : Included for the use case that tesseract cannot work with certain foreign languages. Characters on screen will be attepmted to tbe dumped to a txt file.  Not all Apps work                 (Messenger does not, but signal and others do..)
+   
 - **Autoscroll**:
    - Automates scrolling on the connected device
    - Swipe Direction: Direction of your virtual finger swipe.
