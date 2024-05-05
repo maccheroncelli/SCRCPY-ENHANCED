@@ -10,13 +10,13 @@ This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
 
 ### Setup
 1. Download SCRCPY and extract to a directory - https://github.com/Genymobile/scrcpy/releases
-2. Download and install Tesseract - https://github.com/UB-Mannheim/tesseract/wiki
+2. Download and install Tesseract (and foreign lanaguages via the installer) - https://github.com/UB-Mannheim/tesseract/wiki
 3. Add the tesseract install directory (C:\Program Files\Tesseract-OCR) to Windows Environment variables - Edit 'Path' and add a new line for Tesseract.
 4. Download and install Ghostscript (Ghostscript AGPL Release) - https://www.ghostscript.com/releases/gsdnld.html
 5. Download the `SCRCPY-ULTRA' script and place it into the SCRCPY directory.
 6. Install required Python packages:
    ```sh
-   pip install PyQt5 opencv-python opencv-python-headless PyPDF2 pyautogui numpy pillow reportlab imagehash ocrmypdf
+   pip install PyQt5 opencv-python PyPDF2 pyautogui numpy pillow reportlab imagehash ocrmypdf
    ```
 7. Run the script using Python:
    ```sh
@@ -26,12 +26,24 @@ This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
 9. Android device - Enable **USB Debugging** in Developer options.
 10. On some devices (Xiaomi and possibly others), enable **USB debugging (Security Settings)** (this is an item different from USB debugging) to control it using a keyboard and mouse.
 11. Connect phone to computer and accept trust messages.
+12. All generated files saved to a directory within the scrcpy install path **..\AndroidScreenOutput**
   
 ## Features
 
-- **SCRCPY Functionality**: Enables users to start SCRCPY directly through the interface without command line interaction, simplifying the process of screen mirroring and device control.
-- **Screenshot Tool**: Offers the ability to take screenshots of the connected device. It supports Optical Character Recognition (OCR) to recognize text within screenshots, which can then be used to create searchable PDF documents.
-- **Autoscroll**: Automates scrolling on the connected device, with customizable direction, speed, and count, ideal for capturing content.
+- **SCRCPY Functionality**: 
+   - Screen Mirroring
+   - Screen recording: Commences a recording in MP4 format. File will be saved on exit as "%Y-%m-%d_%H-%M-%S", (Example: 2024-05-05_07-14-42.mp4)
+- **Screenshot Tool**:
+   - Offers the ability to take screenshots of the connected device.
+   - Uses ADB to save a PNG file with the filename as "%Y-%m-%d_%H-%M-%S", (Example: 2024-05-05_07-14-42.png)
+- **OCR Capabilities**
+   -  When enabled, every screenshot will be converted to a black and white PDF document, and then OCR'd with Tessract.  High contrast PDF produces more accurate results.
+   -  Screen Dump (uiAutomate) **Experimental** : Included for the use case that tesseract cannot work with certain foreign languages. Characters on screen will be attepmted to tbe dumped to a txt file.  Not all Apps work                 (Messenger does not, but signal and others do..)
+- **Autoscroll**:
+   - Automates scrolling on the connected device
+   - Swipe Direction: Direction of your virtual finger swipe.
+   - Swipe Speed: How forceful the swipe is and might need adjustment dependin on chat app.  Use the **Test Swipe Speed** button to perform a one time swipe to make sure you dont miss content.
+   - Swipe count: Infinite swipe count will continue scrolling until the top or the bottom of the chat has been reached.  DHash is used to determine if the last two images are the same to stop scolling.
 - **OCR Capabilities**: Integrated OCR function that can be manually triggered, allowing the extraction of text from images or screenshots.
 - **Image Post-Processing**: Includes options for post-processing of images, such as cropping and stitching, to refine the results before saving or utilizing them further.
 - **Image Stitching**: Premier feature, provides the ability to stitch images together in a specified direction, which is particularly useful for creating a continuous image sequence from multiple screenshots.
