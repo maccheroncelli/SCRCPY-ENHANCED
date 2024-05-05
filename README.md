@@ -39,8 +39,11 @@ This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
    - Uses ADB to save a PNG file with the filename as "%Y-%m-%d_%H-%M-%S", (Example: 2024-05-05_07-14-42.png)
      
 - **OCR Capabilities**
-   -  When enabled, every screenshot will be converted to a black and white PDF document, and then OCR'd with Tessract.  High contrast PDF produces more accurate results.  Also performed for autoscrolling screenshots if selected.
-   -  Screen Dump (uiAutomate) **Experimental** : Included for the use case that tesseract cannot work with certain foreign languages. Characters on screen will be attepmted to tbe dumped to a txt file.  Not all Apps work                 (Messenger does not, but signal and others do..)
+   -  **OCR Enabled (Tesseract)**
+      -  When enabled, every screenshot will be converted to a black and white PDF document, and then OCR'd with Tesseract.  High contrast PDF produces more accurate results.
+      -  Also performed for autoscrolling screenshots if selected.
+   -  **Screen Dump (uiAutomate)**
+      -  **Experimental** : Included for the use case that tesseract cannot work with certain foreign languages. Characters on screen will be attepmted to tbe dumped to a txt file.  Not all Apps work (Messenger does not, but signal          and others do..)
    
 - **Autoscroll**:
    - Automates scrolling on the connected device
@@ -52,7 +55,7 @@ This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
    - Swipe Delay: Allows the user to add a delay before hte screenshot is taken.  Ideal for when dynamic content is loaded like pictures in a chat.
    - Post Processing:
       - **Crop**
-         - After the scrollin screenshots have been performed, a window will appear for the user to select the ROI (Region of Interest).  You do this by using the mouse to select the exact chat convewrsation window and                         discarding both the header and the footer of the chat.  Hold down the mouse after the initial start point and drag out a rectangle.  Unclick and then press **ENTER**. All images will be cropped the same.  The                        reason for this is to optimise the stitch operation by removing necessary
+         - After the scrolling screenshots have been performed, a window will appear for the user to select the ROI (Region of Interest).  You do this by using the mouse to select the exact chat conversation window and                         discarding both the header and the footer of the chat.  Hold down the mouse, select and hold the initial start point and drag out a rectangle.  Unclick and then press **ENTER**. All images will be cropped the same.  The             reason for this is to optimise the stitch operation by removing necessary data.
       - **Crop and Stitch**
          - Performs the above **crop** operation and then stiches all the images together.
            
