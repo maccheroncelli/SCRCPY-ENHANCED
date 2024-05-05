@@ -37,16 +37,25 @@ This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
    - Offers the ability to take screenshots of the connected device.
    - Uses ADB to save a PNG file with the filename as "%Y-%m-%d_%H-%M-%S", (Example: 2024-05-05_07-14-42.png)
 - **OCR Capabilities**
-   -  When enabled, every screenshot will be converted to a black and white PDF document, and then OCR'd with Tessract.  High contrast PDF produces more accurate results.
+   -  When enabled, every screenshot will be converted to a black and white PDF document, and then OCR'd with Tessract.  High contrast PDF produces more accurate results.  Also performed for autoscrolling screenshots if selected.
    -  Screen Dump (uiAutomate) **Experimental** : Included for the use case that tesseract cannot work with certain foreign languages. Characters on screen will be attepmted to tbe dumped to a txt file.  Not all Apps work                 (Messenger does not, but signal and others do..)
 - **Autoscroll**:
    - Automates scrolling on the connected device
    - Swipe Direction: Direction of your virtual finger swipe.
    - Swipe Speed: How forceful the swipe is and might need adjustment dependin on chat app.  Use the **Test Swipe Speed** button to perform a one time swipe to make sure you dont miss content.
-   - Swipe count: Infinite swipe count will continue scrolling until the top or the bottom of the chat has been reached.  DHash is used to determine if the last two images are the same to stop scolling.
-- **OCR Capabilities**: Integrated OCR function that can be manually triggered, allowing the extraction of text from images or screenshots.
-- **Image Post-Processing**: Includes options for post-processing of images, such as cropping and stitching, to refine the results before saving or utilizing them further.
-- **Image Stitching**: Premier feature, provides the ability to stitch images together in a specified direction, which is particularly useful for creating a continuous image sequence from multiple screenshots.
+   - Swipe count:
+      - **Infinite** swipe count will continue scrolling until the top or the bottom of the chat has been reached.  DHash is used to determine if the last two images are the same to stop scolling.
+      - Otherwise a set number of swipes can be selected to prevent  capturing too much unnessicary data.
+   - Swipe Delay: Allows the user to add a delay before hte screenshot is taken.  Ideal for when dynamic content is loaded like pictures in a chat.
+   - Post Processing:
+      - **Crop**
+         - After the scrollin screenshots have been performed, a window will appear for the user to select the ROI (Region of Interest).  You do this by using the mouse to select the exact chat convewrsation window and                         discarding both the header and the footer of the chat.  Hold down the mouse after the initial start point and drag out a rectangle.  Unclick and then press **ENTER**. All images will be cropped the same.  The                        reason for this is to optimise the stitch operation by removing necessary
+      - **Crop and Stitch**
+         - Performs the above **crop** operation and then stiches all the images together.
+           
+   - **Manual OCR** - User can select files via a dialog box to attempt to OCR.
+   - **Manual Crop** - User can select files via dialog box to Crop.
+   - **Manual Stitch** - User can select files via dialog box to crop, but must give the original swipe direction of the images to achieve a successful stitch.  Try both if unknown...
 
 ## Contributing
 
