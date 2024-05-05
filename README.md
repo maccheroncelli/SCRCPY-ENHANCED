@@ -19,15 +19,14 @@ This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
    pip install PyQt5 opencv-python opencv-python-headless PyPDF2 pyautogui numpy pillow reportlab imagehash ocrmypdf
    ```
 7. Run the script using Python:
-```sh
-python SCRCPY-ULTRA-VX.X.py
-```
+   ```sh
+   python SCRCPY-ULTRA-VX.X.py
+   ```
+8. Android device - Enable **Developer Mode** by going to Settings > About phone and tapping Build number 7 times.
+9. Android device - Enable **USB Debugging** in Developer options.
+10. On some devices (Xiaomi and possibly others), enable **USB debugging (Security Settings)** (this is an item different from USB debugging) to control it using a keyboard and mouse.
+11. Connect phone to computer and accept trust messages.
   
-### Android Device Setup
-Before using SCRCPY-ULTRA, ensure your Android device is prepared:
-- Enable **Developer Mode** by going to Settings > About phone and tapping Build number 7 times.
-- Turn on **USB Debugging** in Developer options.
-
 ## Features
 
 - **SCRCPY Functionality**: Enables users to start SCRCPY directly through the interface without command line interaction, simplifying the process of screen mirroring and device control.
