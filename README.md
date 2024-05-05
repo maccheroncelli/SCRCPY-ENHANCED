@@ -12,24 +12,21 @@ This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
 1. Download SCRCPY and extract to a directory - https://github.com/Genymobile/scrcpy/releases
 2. Download and install Tesseract - https://github.com/UB-Mannheim/tesseract/wiki
 3. Add the tesseract install directory (C:\Program Files\Tesseract-OCR) to Windows Environment variables - Edit 'Path' and add a new line for Tesseract.
-4. Download the `SCRCPY-ULTRA' script and place it into the SCRCPY directory.
-5. Install required Python packages:
+4. Download and install Ghostscript (Ghostscript AGPL Release) - https://www.ghostscript.com/releases/gsdnld.html
+5. Download the `SCRCPY-ULTRA' script and place it into the SCRCPY directory.
+6. Install required Python packages:
    ```sh
    pip install PyQt5 opencv-python opencv-python-headless PyPDF2 pyautogui numpy pillow reportlab imagehash ocrmypdf
    ```
-   
+7. Run the script using Python:
+```sh
+python SCRCPY-ULTRA-VX.X.py
+```
+  
 ### Android Device Setup
 Before using SCRCPY-ULTRA, ensure your Android device is prepared:
 - Enable **Developer Mode** by going to Settings > About phone and tapping Build number 7 times.
 - Turn on **USB Debugging** in Developer options.
-
-## Usage
-
-### Starting the Application
-Run the script using Python:
-```sh
-python SCRCPY-ULTRA-VX.X.py
-```
 
 ## Features
 
