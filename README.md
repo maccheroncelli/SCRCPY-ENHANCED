@@ -1,32 +1,34 @@
 # SCRCPY-ULTRA
 
-## Description
+## 
+
 SCRCPY-ULTRA enhances the functionality of the original SCRCPY application. Autoscrolling, OCR of screenshots, cropping of screenshots, and image stitching...
 
 To leverage the full functionality of SCRCPY-ULTRA, including screen recording and mirroring, place the script in the same directory as your SCRCPY installation. 
 This setup ensures that SCRCPY-ULTRA can utilize scrcpy's capabilities directly.
 
-## Installation
+## Installation and Setup
 
-### Setup
-1. Download SCRCPY and extract to a directory - https://github.com/Genymobile/scrcpy/releases
-2. Download and install Tesseract (and foreign lanaguages via the installer) - https://github.com/UB-Mannheim/tesseract/wiki
-3. Add the tesseract install directory (C:\Program Files\Tesseract-OCR) to Windows Environment variables - Edit 'Path' and add a new line for Tesseract.
-4. Download and install Ghostscript (Ghostscript AGPL Release) - https://www.ghostscript.com/releases/gsdnld.html
-5. Download the `SCRCPY-ULTRA' script and place it into the SCRCPY directory.
-6. Install required Python packages:
+1. Download and install Python, make sure you tick 'add to path' during the install - https://www.python.org/downloads/
+2. Install required Python packages:
    ```sh
    pip install PyQt5 opencv-python PyPDF2 pyautogui numpy pillow reportlab imagehash ocrmypdf
-   ```
-7. Run the script using Python:
+   ``` 
+3. Download and install Tesseract (and foreign lanaguages via the installer if other languages required) - https://github.com/UB-Mannheim/tesseract/wiki
+4. Add the tesseract install directory (C:\Program Files\Tesseract-OCR) to Windows Environment variables - Edit 'Path' and add a new line for Tesseract.
+   5. Start button > 'Edit the system environment variables' > Environment Variables > Select 'PATH' in 'System Variables' > Edit... > New > Paste C:\Program Files\Tesseract-OCR > OK 
+6. Download and install Ghostscript (Ghostscript AGPL Release) - https://www.ghostscript.com/releases/gsdnld.html
+7. Download SCRCPY and extract to a directory - https://github.com/Genymobile/scrcpy/releases
+8. Download the `SCRCPY-ULTRA' script and place it into the SCRCPY directory.
+9. Run the script using Python, X.X represents the version of the script...
    ```sh
    python SCRCPY-ULTRA-VX.X.py
    ```
-8. Android device - Enable **Developer Mode** by going to Settings > About phone and tapping Build number 7 times.
-9. Android device - Enable **USB Debugging** in Developer options.
-10. On some devices (Xiaomi and possibly others), enable **USB debugging (Security Settings)** (this is an item different from USB debugging) to control it using a keyboard and mouse.
-11. Connect phone to computer and accept trust messages.
-12. All generated files saved to a directory within the scrcpy install path **..\AndroidScreenOutput**
+10. Android device - Enable **Developer Mode** by going to Settings > About phone and tapping Build number 7 times.
+11. Android device - Enable **USB Debugging** in Developer options.
+12. On some devices (Xiaomi and possibly others), enable **USB debugging (Security Settings)** (this is an item different from USB debugging) to control it using a keyboard and mouse.
+13. Connect phone to computer and accept trust messages.
+14. All generated files saved to a directory within the scrcpy install path **..\AndroidScreenOutput**
   
 ## Features
 
